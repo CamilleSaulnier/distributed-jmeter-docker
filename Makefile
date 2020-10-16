@@ -1,8 +1,8 @@
 build:
-	@docker build -t pedrocesarti/jmeter-docker:local .
+	@docker build -t csaulnier/jmeter-docker:local .
 
 build_all:
 	@while read -r version ; do \
-		docker build --build-arg JMETER_VERSION=5.3 --tag pedrocesarti/jmeter-docker:$$version . ; \
-		docker push pedrocesarti/jmeter-docker:$$version ; \
+		docker build --build-arg JMETER_VERSION=5.3 --tag csaulnier/jmeter-docker:5.3 . ; \
+		docker push csaulnier/jmeter-docker:5.3 ; \
 	done < VERSIONS
